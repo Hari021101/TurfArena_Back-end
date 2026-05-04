@@ -79,6 +79,12 @@ public class AppDbContext : DbContext
             e.HasIndex(b => b.Date);
         });
 
+        // ── Payment ───────────────────────────────────────────────────────────
+        modelBuilder.Entity<Payment>(e =>
+        {
+            e.Property(p => p.Amount).HasColumnType("decimal(10,2)");
+        });
+
         // ── Review ────────────────────────────────────────────────────────────
         modelBuilder.Entity<Review>(e =>
         {
@@ -103,12 +109,12 @@ public class AppDbContext : DbContext
             e.HasOne(f => f.User)
              .WithMany(u => u.FavoriteTurfs)
              .HasForeignKey(f => f.UserId)
-             .OnDelete(DeleteBehavior.Cascade);
+             .OnDelete(DeleteBehavior.Restrict);
 
             e.HasOne(f => f.Turf)
              .WithMany(t => t.FavoritedBy)
              .HasForeignKey(f => f.TurfId)
-             .OnDelete(DeleteBehavior.Cascade);
+             .OnDelete(DeleteBehavior.Restrict);
 
             e.HasIndex(f => new { f.UserId, f.TurfId }).IsUnique();
         });

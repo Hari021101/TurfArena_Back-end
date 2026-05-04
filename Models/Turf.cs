@@ -15,9 +15,8 @@ public class Turf
     public string? StateId { get; set; }
     public string? RegionId { get; set; }
 
-    // Timing
-    public string TimingStart { get; set; } = "06:00"; // HH:mm
-    public string TimingEnd { get; set; } = "23:00";   // HH:mm
+    public string TimingStart { get; set; } = "06:00";
+    public string TimingEnd { get; set; } = "23:00";
 
     public decimal PricePerHour { get; set; }
     public string Description { get; set; } = string.Empty;

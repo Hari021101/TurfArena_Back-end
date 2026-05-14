@@ -39,8 +39,10 @@ builder.Services.AddCors(options =>
 });
 
 // ─── Services ────────────────────────────────────────────────────────────────
+builder.Services.AddHttpClient();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<SlotGeneratorService>();
+builder.Services.AddScoped<WeatherService>();
 builder.Services.AddAutoMapper(typeof(Program));
 
 // ─── Controllers + Swagger ───────────────────────────────────────────────────

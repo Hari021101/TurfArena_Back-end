@@ -6,6 +6,7 @@ public class CreateReviewDto
     public string BookingId { get; set; } = string.Empty;
     public int Rating { get; set; }
     public string Comment { get; set; } = string.Empty;
+    public List<string>? Photos { get; set; }
 }
 
 public class ReviewDto
@@ -18,5 +19,6 @@ public class ReviewDto
     public string BookingId { get; set; } = string.Empty;
     public int Rating { get; set; }
     public string Comment { get; set; } = string.Empty;
+    public List<string>? Photos { get; set; }
     public DateTime CreatedAt { get; set; }
 }

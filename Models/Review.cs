@@ -16,5 +16,6 @@ public class Review
 
     public int Rating { get; set; } // 1-5
     public string Comment { get; set; } = string.Empty;
+    public List<string>? Photos { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }

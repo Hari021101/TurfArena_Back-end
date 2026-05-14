@@ -51,6 +51,7 @@ public class ReviewsController : ControllerBase
             BookingId = dto.BookingId,
             Rating = dto.Rating,
             Comment = dto.Comment,
+            Photos = dto.Photos,
             CreatedAt = DateTime.UtcNow
         };
 
@@ -83,6 +84,7 @@ public class ReviewsController : ControllerBase
             BookingId = r.BookingId,
             Rating = r.Rating,
             Comment = r.Comment,
+            Photos = r.Photos,
             CreatedAt = r.CreatedAt
         };
     }
